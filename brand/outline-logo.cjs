@@ -1,0 +1,8 @@
+const fs=require('fs');const path=require('path');const {convertSVGTextToPath,GlobalFonts}=require('/Users/khaledaladdin/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/node_modules/@napi-rs/canvas');
+GlobalFonts.registerFromPath('/System/Library/Fonts/Supplemental/Arial.ttf','Arial');
+GlobalFonts.registerFromPath('/System/Library/Fonts/Supplemental/Arial Bold.ttf','Arial');
+const dir=path.join(__dirname,'logo');fs.mkdirSync(path.join(dir,'editable-source'),{recursive:true});
+for(const file of fs.readdirSync(dir).filter(f=>f.endsWith('.svg'))){const source=fs.readFileSync(path.join(dir,file));if(source.toString().includes('<text')){fs.writeFileSync(path.join(dir,'editable-source',file),source);const outline=convertSVGTextToPath(source);if(outline.toString().includes('<text'))throw new Error('Text was not outlined');fs.writeFileSync(path.join(dir,file),outline);}}
+const readme=path.join(dir,'BRAND-README.txt');let s=fs.readFileSync(readme,'utf8');s=s.replace('SVG: scalable vector artwork. BHB symbol is defined as vector paths.\nDescriptor text uses Arial/Helvetica; outline text in your design\nsoftware before supplying final artwork to a sign or print vendor.','SVG: scalable vector artwork. All lettering is converted to vector\npaths, including BUSINESS HUB and BUSINESS CENTRE. No fonts are needed\nfor printing. Editable descriptor versions are in editable-source.');fs.writeFileSync(readme,s);
+fs.copyFileSync(path.join(dir,'BHB-full-logo-black-gold.svg'),path.join(__dirname,'../public/brand/logo.svg'));
+console.log('All primary SVG lettering outlined for font-independent production.');
