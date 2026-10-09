@@ -1,0 +1,149 @@
+[
+  {
+    "id": "ahmed",
+    "file": "public/photos/ahmed-480.webp",
+    "width": 480,
+    "height": 600,
+    "bytes": 17124
+  },
+  {
+    "id": "ahmed",
+    "file": "public/photos/ahmed-960.webp",
+    "width": 960,
+    "height": 1200,
+    "bytes": 92760
+  },
+  {
+    "id": "ahmed",
+    "file": "public/photos/ahmed-1440.webp",
+    "width": 1366,
+    "height": 1708,
+    "bytes": 189572
+  },
+  {
+    "id": "fasia",
+    "file": "public/photos/fasia-480.webp",
+    "width": 480,
+    "height": 600,
+    "bytes": 13290
+  },
+  {
+    "id": "fasia",
+    "file": "public/photos/fasia-960.webp",
+    "width": 960,
+    "height": 1200,
+    "bytes": 52692
+  },
+  {
+    "id": "fasia",
+    "file": "public/photos/fasia-1440.webp",
+    "width": 1122,
+    "height": 1402,
+    "bytes": 72778
+  },
+  {
+    "id": "reception",
+    "file": "public/photos/reception-480.webp",
+    "width": 480,
+    "height": 360,
+    "bytes": 25564
+  },
+  {
+    "id": "reception",
+    "file": "public/photos/reception-960.webp",
+    "width": 960,
+    "height": 720,
+    "bytes": 84640
+  },
+  {
+    "id": "reception",
+    "file": "public/photos/reception-1440.webp",
+    "width": 1440,
+    "height": 1080,
+    "bytes": 169126
+  },
+  {
+    "id": "private",
+    "file": "public/photos/private-480.webp",
+    "width": 480,
+    "height": 360,
+    "bytes": 26622
+  },
+  {
+    "id": "private",
+    "file": "public/photos/private-960.webp",
+    "width": 960,
+    "height": 720,
+    "bytes": 94008
+  },
+  {
+    "id": "private",
+    "file": "public/photos/private-1440.webp",
+    "width": 1440,
+    "height": 1080,
+    "bytes": 182916
+  },
+  {
+    "id": "shared",
+    "file": "public/photos/shared-480.webp",
+    "width": 480,
+    "height": 360,
+    "bytes": 24404
+  },
+  {
+    "id": "shared",
+    "file": "public/photos/shared-960.webp",
+    "width": 960,
+    "height": 720,
+    "bytes": 78944
+  },
+  {
+    "id": "shared",
+    "file": "public/photos/shared-1440.webp",
+    "width": 1440,
+    "height": 1080,
+    "bytes": 148408
+  },
+  {
+    "id": "meeting",
+    "file": "public/photos/meeting-480.webp",
+    "width": 480,
+    "height": 320,
+    "bytes": 13508
+  },
+  {
+    "id": "meeting",
+    "file": "public/photos/meeting-960.webp",
+    "width": 960,
+    "height": 640,
+    "bytes": 38092
+  },
+  {
+    "id": "meeting",
+    "file": "public/photos/meeting-1440.webp",
+    "width": 1440,
+    "height": 960,
+    "bytes": 69722
+  },
+  {
+    "id": "daylight",
+    "file": "public/photos/daylight-480.webp",
+    "width": 480,
+    "height": 360,
+    "bytes": 24526
+  },
+  {
+    "id": "daylight",
+    "file": "public/photos/daylight-960.webp",
+    "width": 960,
+    "height": 720,
+    "bytes": 81284
+  },
+  {
+    "id": "daylight",
+    "file": "public/photos/daylight-1440.webp",
+    "width": 1440,
+    "height": 1080,
+    "bytes": 161516
+  }
+]
