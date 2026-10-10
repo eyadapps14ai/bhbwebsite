@@ -2,6 +2,8 @@ import fs from 'node:fs/promises';
 import {build, createServer} from 'vite';
 import {renderToString} from 'react-dom/server';
 import React from 'react';
+import {whatsapp} from '../src/content.js';
+if(!/^[1-9]\d{7,14}$/.test(whatsapp))throw new Error('Set BHB\'s WhatsApp number in src/content.js (international format, digits only, e.g. 9715XXXXXXXX) before building.');
 await build();
 const server=await createServer({server:{middlewareMode:true,hmr:false,ws:false},optimizeDeps:{noDiscovery:true,include:[]},appType:'custom'});
 try {

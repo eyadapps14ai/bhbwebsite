@@ -20,7 +20,7 @@ Production build: `npm run build`.
 
 ## Phase 1 limits
 
-Enquiry forms validate input and save to this browser's local storage (`bhb-enquiries`); they do not send email or transmit leads. No additional pages have been built. The architectural scene is a real-time stylized CGI environment, not a photorealistic render. External Google Fonts are optional; local font fallbacks are provided.
+Enquiry forms validate input, then open WhatsApp with the visitor's name, email, chosen service and message filled in, addressed to BHB's number. The visitor presses Send in WhatsApp; nothing is stored on the site. Set the number once as `whatsapp` in `src/content.js` (international format, digits only, e.g. `9715XXXXXXXX`). `npm run build` stops with an error until it is set. No additional pages have been built. The architectural scene is a real-time stylized CGI environment, not a photorealistic render. External Google Fonts are optional; local font fallbacks are provided.
 
 ## Logo assets
 
@@ -42,6 +42,6 @@ Select “Enter with sound” to enable the original procedural ambient opening,
 
 Preview http://127.0.0.1:5173/about/. The navigation includes About Us. The six-section page reuses the approved visual identity, architectural scene, header, footer and enquiry dialog. Homepage sections and content are unchanged.
 
-The build pre-renders `dist/about/index.html` with unique page metadata and structured data. Deploy this directory alongside the homepage so direct `/about/` links resolve. Contact uses the existing local preview enquiry dialog; no contact page or individual service pages have been built.
+The build pre-renders `dist/about/index.html` with unique page metadata and structured data. Deploy this directory alongside the homepage so direct `/about/` links resolve. Contact uses the shared WhatsApp enquiry dialog; no contact page or individual service pages have been built.
 
 Research, confirmation items and validation results are in `docs/about-content-research.md` and `docs/about-validation.md`.
