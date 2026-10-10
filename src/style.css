@@ -10,3 +10,4 @@
 .service-card{background:#141713b3}.service-card:hover{background:#24281eef}
 footer{background:#0e110de8}
 @media(max-width:600px){.services{background:linear-gradient(90deg,#141713a6,#141713ed 12%,#141713ed 88%,#141713a6)}.services:before{left:2%}.services:after{right:2%}.services:before,.services:after{width:6px}}
+.modal p a{color:var(--gold);text-decoration:underline;text-underline-offset:3px}
