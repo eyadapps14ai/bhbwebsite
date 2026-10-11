@@ -22,6 +22,10 @@ Production build: `npm run build`.
 
 Enquiry forms validate input, then open WhatsApp with the visitor's name, email, chosen service and message filled in, addressed to BHB's number. The visitor presses Send in WhatsApp; nothing is stored on the site. Set the number once as `whatsapp` in `src/content.js` (international format, digits only, e.g. `9715XXXXXXXX`). `npm run build` stops with an error until it is set. No additional pages have been built. The architectural scene is a real-time stylized CGI environment, not a photorealistic render. External Google Fonts are optional; local font fallbacks are provided.
 
+## Admin link
+
+`/admin` takes BHB staff to the dashboard, where they sign in. Set `BHB_DASHBOARD_URL` (HTTPS) when building, for example `BHB_DASHBOARD_URL=https://admin.bhbcentre.com npm run build`. The build then writes `dist/admin/index.html` and a `dist/_redirects` rule, and robots.txt asks search engines to skip `/admin`. Without the variable, no admin redirect is created. In local development, `/admin` goes to the dashboard at http://127.0.0.1:5173/.
+
 ## Logo assets
 
 `brand/BHB-Official-Logo-Pack.zip` contains transparent 3200px PNGs and scalable SVGs for dark, light and single-colour use, plus monograms and preview files. All lettering in the primary SVGs is outlined as vector paths for font-independent print production. Editable descriptor source versions are included.
