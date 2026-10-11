@@ -4,6 +4,9 @@ import {renderToString} from 'react-dom/server';
 import React from 'react';
 import {whatsapp} from '../src/content.js';
 if(!/^[1-9]\d{7,14}$/.test(whatsapp))throw new Error('Set BHB\'s WhatsApp number in src/content.js (international format, digits only, e.g. 9715XXXXXXXX) before building.');
+const dashboard=process.env.BHB_DASHBOARD_URL?new URL(process.env.BHB_DASHBOARD_URL):null;
+if(dashboard&&dashboard.protocol!=='https:')throw new Error('BHB_DASHBOARD_URL must use HTTPS');
+if(dashboard)process.env.VITE_BHB_DASHBOARD_URL=dashboard.href;
 await build();
 const server=await createServer({server:{middlewareMode:true,hmr:false,ws:false},optimizeDeps:{noDiscovery:true,include:[]},appType:'custom'});
 try {
@@ -25,7 +28,8 @@ try {
   if(page.meta)await fs.mkdir('dist'+page.path,{recursive:true});
   await fs.writeFile(page.file,html);
  }
- await fs.writeFile('dist/robots.txt',`User-agent: *\nAllow: /\nSitemap: ${base}/sitemap.xml\n`);
+ await fs.writeFile('dist/robots.txt',`User-agent: *\nAllow: /\nDisallow: /admin\nSitemap: ${base}/sitemap.xml\n`);
  await fs.writeFile('dist/sitemap.xml',`<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"><url><loc>${base}/</loc></url><url><loc>${base}/about/</loc></url><url><loc>${base}/expertise/</loc></url><url><loc>${base}/spaces/</loc></url></urlset>`);
+ if(dashboard){const href=escape(dashboard.href);await fs.mkdir('dist/admin',{recursive:true});await fs.writeFile('dist/admin/index.html',`<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="robots" content="noindex"><meta http-equiv="refresh" content="0;url=${href}"><title>BHB dashboard</title></head><body><p><a href="${href}">Continue to the BHB dashboard</a></p></body></html>`);await fs.writeFile('dist/_redirects',`/admin ${dashboard.href} 302\n/admin/ ${dashboard.href} 302\n`);}
  console.log('Homepage, About Us, Our Expertise and Our Spaces pre-rendered with page-specific metadata, schema, canonical URLs and sitemap.');
 }finally{await server.close();}
