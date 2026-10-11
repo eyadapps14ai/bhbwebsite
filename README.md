@@ -20,7 +20,7 @@ Production build: `npm run build`.
 
 ## Phase 1 limits
 
-Enquiry forms validate input, then open WhatsApp with the visitor's name, email, chosen service and message filled in, addressed to BHB's number. The visitor presses Send in WhatsApp; nothing is stored on the site. Set the number once as `whatsapp` in `src/content.js` (international format, digits only, e.g. `9715XXXXXXXX`). `npm run build` stops with an error until it is set. No additional pages have been built. The architectural scene is a real-time stylized CGI environment, not a photorealistic render. External Google Fonts are optional; local font fallbacks are provided.
+Enquiry forms (name, email, optional phone, message) go straight to the Enquiries inbox in the BHB dashboard at `BHB_DASHBOARD_URL`; staff are notified there. The dashboard must list this site's address in its `WEBSITE_ORIGINS` setting, for example `https://www.bhbcentre.com,https://bhbcentre.com`. When BHB's WhatsApp number is set as `whatsapp` in `src/content.js` (international format, digits only, e.g. `9715XXXXXXXX`), the thank-you screen also offers "Continue on WhatsApp". Without a dashboard address, the form opens WhatsApp instead. `npm run build` stops with an error unless at least one of the two is set. A hidden field catches spam bots. No additional pages have been built. The architectural scene is a real-time stylized CGI environment, not a photorealistic render. External Google Fonts are optional; local font fallbacks are provided.
 
 ## Admin link
 
