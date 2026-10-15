@@ -26,6 +26,16 @@ Enquiry forms (name, email, optional phone, message) go straight to the Enquirie
 
 `/admin` takes BHB staff to the dashboard, where they sign in. Set `BHB_DASHBOARD_URL` (HTTPS) when building, for example `BHB_DASHBOARD_URL=https://admin.bhbcentre.com npm run build`. The build then writes `dist/admin/index.html` and a `dist/_redirects` rule, and robots.txt asks search engines to skip `/admin`. Without the variable, no admin redirect is created. In local development, `/admin` goes to the dashboard at http://127.0.0.1:5173/.
 
+## Deploy on Cloud Run
+
+The site runs as its own small Cloud Run service, next to the BHB dashboard in the same Google Cloud project. The `Dockerfile` builds the site and serves it with `server.mjs` (no dependencies), which also sends `/admin` to the dashboard and caches `/assets/` for a year.
+
+    gcloud run deploy bhb-website --source . --region us-east5 --allow-unauthenticated
+
+The image is built for the dashboard at `BHB_DASHBOARD_URL`. It defaults to the current Cloud Run address; when the dashboard moves to its own domain, change the default in the `Dockerfile` or build with `--build-arg BHB_DASHBOARD_URL=https://…`. The dashboard must list this site's address (including its `run.app` preview address) in its `WEBSITE_ORIGINS` setting, or it will refuse enquiries. Point www.bhbcentre.com at this service with a Cloud Run domain mapping when it is ready to replace the current site.
+
+To try the production build locally: `BHB_DASHBOARD_URL=http://127.0.0.1:5173 npm run build && PORT=5174 node server.mjs`.
+
 ## Logo assets
 
 `brand/BHB-Official-Logo-Pack.zip` contains transparent 3200px PNGs and scalable SVGs for dark, light and single-colour use, plus monograms and preview files. All lettering in the primary SVGs is outlined as vector paths for font-independent print production. Editable descriptor source versions are included.

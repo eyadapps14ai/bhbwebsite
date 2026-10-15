@@ -4,7 +4,7 @@ import {renderToString} from 'react-dom/server';
 import React from 'react';
 import {whatsapp} from '../src/content.js';
 const dashboard=process.env.BHB_DASHBOARD_URL?new URL(process.env.BHB_DASHBOARD_URL):null;
-if(dashboard&&dashboard.protocol!=='https:')throw new Error('BHB_DASHBOARD_URL must use HTTPS');
+if(dashboard&&dashboard.protocol!=='https:'&&!['127.0.0.1','localhost'].includes(dashboard.hostname))throw new Error('BHB_DASHBOARD_URL must use HTTPS');
 if(whatsapp&&!/^[1-9]\d{7,14}$/.test(whatsapp))throw new Error('BHB\'s WhatsApp number in src/content.js must be in international format, digits only, e.g. 9715XXXXXXXX.');
 if(!dashboard&&!whatsapp)throw new Error('Enquiries need somewhere to go: set BHB_DASHBOARD_URL (the dashboard inbox) or BHB\'s WhatsApp number in src/content.js before building.');
 if(dashboard)process.env.VITE_BHB_DASHBOARD_URL=dashboard.href;
