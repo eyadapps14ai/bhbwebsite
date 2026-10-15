@@ -87,3 +87,8 @@ header.site-header nav a:after,header.site-header nav a[aria-current]:after{disp
 @media(max-width:600px){.hero-services{position:relative}.hero-services:before,.hero-services:after{left:-14px;right:auto;top:0;bottom:0;width:8px;height:auto;background:repeating-linear-gradient(180deg,var(--tick) 0 2px,transparent 2px 8px)}.hero-services.spotlight:after{animation-name:journey-down}.hero{padding-left:14px}}
 @media(max-width:1100px) and (min-width:601px){.hero-services{position:relative}}
 @media(max-width:1100px){.hero-services{top:auto;bottom:auto}}
+/* Journey as one thin line that fills, instead of ticks. */
+.hero-services:before,.hero-services:after{top:-12px;height:2px;border-radius:2px;background:var(--line)}
+.hero-services:before{--line:#c5a36a33}
+.hero-services:after{--line:linear-gradient(90deg,#b89962,#f0d49a);box-shadow:0 0 10px #e2c38766}
+@media(max-width:600px){.hero-services:before,.hero-services:after{top:0;left:-12px;width:2px;height:auto}.hero-services:after{--line:linear-gradient(180deg,#b89962,#f0d49a)}}
