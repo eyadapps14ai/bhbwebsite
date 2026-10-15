@@ -74,3 +74,16 @@ header.site-header nav a:after,header.site-header nav a[aria-current]:after{disp
 /* Highlight in place: no lift, just a brighter card with a gold edge. */
 @keyframes service-highlight{0%,25%,100%{background:transparent;box-shadow:none}5%,20%{background:#1c2117f2;box-shadow:inset 0 0 0 1px #c5a36a99,0 0 26px #c5a36a24}}
 .hero-services.spotlight .hero-service{animation-name:service-highlight}
+/* Services sit at the very bottom of the first screen. */
+.hero-services{bottom:52px}.replay,.scroll{bottom:14px}
+@media(min-width:1101px) and (max-height:820px){.hero-services{bottom:44px}.hero-copy{padding-bottom:160px}}
+/* Journey bar: fine gold ticks along the cards that fill from Company formation to Flexible offices, in step with the highlight. */
+.hero-services:before,.hero-services:after{content:'';position:absolute;left:0;right:0;top:-15px;height:8px;pointer-events:none;background:repeating-linear-gradient(90deg,var(--tick) 0 2px,transparent 2px 8px)}
+.hero-services:before{--tick:#c5a36a3d}
+.hero-services:after{--tick:#e2c387;clip-path:inset(0)}
+@keyframes journey{from{clip-path:inset(0 100% 0 0)}to{clip-path:inset(0)}}
+@keyframes journey-down{from{clip-path:inset(0 0 100% 0)}to{clip-path:inset(0)}}
+.hero-services.spotlight:after{animation:journey 4s linear 1s 2 both}
+@media(max-width:600px){.hero-services{position:relative}.hero-services:before,.hero-services:after{left:-14px;right:auto;top:0;bottom:0;width:8px;height:auto;background:repeating-linear-gradient(180deg,var(--tick) 0 2px,transparent 2px 8px)}.hero-services.spotlight:after{animation-name:journey-down}.hero{padding-left:14px}}
+@media(max-width:1100px) and (min-width:601px){.hero-services{position:relative}}
+@media(max-width:1100px){.hero-services{top:auto;bottom:auto}}
