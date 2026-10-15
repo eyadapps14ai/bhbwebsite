@@ -41,3 +41,11 @@ header.site-header .header-cta:hover{background:linear-gradient(115deg,#d7b77f,#
 @media(prefers-reduced-motion:reduce){.hero-service,.hero-service>svg:last-child,header.site-header nav a,header.site-header .header-cta{transition:none}}
 .hero-copy{padding-bottom:172px}@media(max-width:1100px){.hero-copy{padding-bottom:220px}}@media(max-width:600px){.hero-copy{padding-bottom:0}}
 header.site-header nav a:after,header.site-header nav a[aria-current]:after{display:none}
+/* Services as a vertical column on the right of the landing screen. */
+.hero-copy{padding-bottom:65px}
+.hero-side{display:none}
+.hero-services{left:auto;right:0;top:50%;bottom:auto;transform:translateY(-50%);width:min(340px,30%);grid-template-columns:1fr}
+.hero-service{border-right:0;border-bottom:1px solid #c5a36a26}
+.hero-service:last-child{border-bottom:0}
+@media(max-width:1100px){.hero{flex-direction:column;justify-content:center;align-items:stretch;height:auto;min-height:calc(100svh - 76px);padding:24px 0 80px}.hero-copy{padding-bottom:0}.hero-services{position:static;transform:none;width:100%;max-width:440px;margin-top:24px;grid-template-columns:1fr}.hero-service:nth-child(2){border-right:0}.hero-service:nth-child(-n+2){border-bottom:1px solid #c5a36a26}.hero-service:last-child{border-bottom:0}}
+@media(max-width:600px){.hero-services{max-width:none;margin-top:20px}.hero-service{padding:11px 12px}}
