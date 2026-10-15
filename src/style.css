@@ -92,3 +92,21 @@ header.site-header nav a:after,header.site-header nav a[aria-current]:after{disp
 .hero-services:before{--line:#c5a36a33}
 .hero-services:after{--line:linear-gradient(90deg,#b89962,#f0d49a);box-shadow:0 0 10px #e2c38766}
 @media(max-width:600px){.hero-services:before,.hero-services:after{top:0;left:-12px;width:2px;height:auto}.hero-services:after{--line:linear-gradient(180deg,#b89962,#f0d49a)}}
+/* After the intro, the BHB lobby photo stays as the background; the 3D scene fades out and stops rendering. */
+.scene canvas{transition:opacity 1.2s ease}
+.scene-photo,.scene-shade{position:absolute;inset:0;width:100%;height:100%;opacity:0;transition:opacity 1.2s ease;pointer-events:none}
+.scene-photo{object-fit:cover;object-position:58% 60%}
+.scene-shade{background:linear-gradient(90deg,#0a0c09e6 0%,#0a0c09a6 30%,#0a0c0926 60%,#0a0c0959 100%),linear-gradient(0deg,#0a0c09f2 0%,#0a0c0900 38%),linear-gradient(180deg,#0a0c09b3 0%,#0a0c0900 18%)}
+.scene-photo.shown,.scene-shade.shown{opacity:1}
+.scene:has(.scene-photo.shown) canvas{opacity:0}
+@media(max-width:600px){.scene-photo{object-position:56% 60%}.scene-shade{background:linear-gradient(0deg,#0a0c09f2 0%,#0a0c09b3 45%,#0a0c0966 75%,#0a0c09a6 100%)}}
+/* Play the highlight once; the journey line fills with it and then fades away. */
+.hero-services.spotlight .hero-service{animation-iteration-count:1}
+.hero-services:before,.hero-services:after{opacity:0}
+@keyframes journey-once{0%{clip-path:inset(0 100% 0 0);opacity:1}80%{clip-path:inset(0);opacity:1}100%{clip-path:inset(0);opacity:0}}
+@keyframes journey-once-down{0%{clip-path:inset(0 0 100% 0);opacity:1}80%{clip-path:inset(0);opacity:1}100%{clip-path:inset(0);opacity:0}}
+@keyframes journey-track{0%,80%{opacity:1}100%{opacity:0}}
+.hero-services.spotlight:after{animation:journey-once 5s linear 1s 1 both}
+.hero-services.spotlight:before{animation:journey-track 5s linear 1s 1 both}
+@media(max-width:600px){.hero-services.spotlight:after{animation-name:journey-once-down}}
+@media(max-width:600px){.scene-photo{object-position:16% 60%}}

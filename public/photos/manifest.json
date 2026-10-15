@@ -145,5 +145,26 @@
     "width": 1440,
     "height": 1080,
     "bytes": 161516
+  },
+  {
+    "id": "lobby",
+    "file": "public/photos/lobby-480.webp",
+    "width": 480,
+    "height": 240,
+    "bytes": 11080
+  },
+  {
+    "id": "lobby",
+    "file": "public/photos/lobby-960.webp",
+    "width": 960,
+    "height": 480,
+    "bytes": 29704
+  },
+  {
+    "id": "lobby",
+    "file": "public/photos/lobby-1774.webp",
+    "width": 1774,
+    "height": 887,
+    "bytes": 69024
   }
 ]
