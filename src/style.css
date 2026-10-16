@@ -95,7 +95,7 @@ header.site-header nav a:after,header.site-header nav a[aria-current]:after{disp
 /* After the intro, the BHB lobby photo stays as the background; the 3D scene fades out and stops rendering. */
 .scene canvas{transition:opacity 1.2s ease}
 .scene-photo,.scene-shade{position:absolute;inset:0;width:100%;height:100%;opacity:0;transition:opacity 1.2s ease;pointer-events:none}
-.scene-photo{object-fit:cover;object-position:58% 60%}
+.scene-photo{object-fit:cover;object-position:22% 60%}
 .scene-shade{background:linear-gradient(90deg,#0a0c09e6 0%,#0a0c09a6 30%,#0a0c0926 60%,#0a0c0959 100%),linear-gradient(0deg,#0a0c09f2 0%,#0a0c0900 38%),linear-gradient(180deg,#0a0c09b3 0%,#0a0c0900 18%)}
 .scene-photo.shown,.scene-shade.shown{opacity:1}
 .scene:has(.scene-photo.shown) canvas{opacity:0}

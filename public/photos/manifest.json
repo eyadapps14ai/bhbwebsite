@@ -147,24 +147,24 @@
     "bytes": 161516
   },
   {
-    "id": "lobby",
-    "file": "public/photos/lobby-480.webp",
+    "id": "front-desk",
+    "file": "public/photos/front-desk-480.webp",
     "width": 480,
-    "height": 240,
-    "bytes": 11080
+    "height": 234,
+    "bytes": 9044
   },
   {
-    "id": "lobby",
-    "file": "public/photos/lobby-960.webp",
+    "id": "front-desk",
+    "file": "public/photos/front-desk-960.webp",
     "width": 960,
-    "height": 480,
-    "bytes": 29704
+    "height": 467,
+    "bytes": 25684
   },
   {
-    "id": "lobby",
-    "file": "public/photos/lobby-1774.webp",
-    "width": 1774,
-    "height": 887,
-    "bytes": 69024
+    "id": "front-desk",
+    "file": "public/photos/front-desk-1798.webp",
+    "width": 1798,
+    "height": 875,
+    "bytes": 65302
   }
 ]
