@@ -111,3 +111,6 @@ header.site-header nav a:after,header.site-header nav a[aria-current]:after{disp
 /* Desktop: the services row runs edge to edge along the bottom; the outer cards keep their content in line with the page margins. */
 @media(min-width:1101px){main{container-type:inline-size}.hero-services{--edge:6cqw;left:calc(-1*var(--edge));right:calc(-1*var(--edge));grid-template-columns:var(--edge) repeat(4,minmax(0,1fr)) var(--edge);border-left:0;border-right:0}.hero-service:first-child{grid-column:1/3;padding-left:calc(var(--edge) + 24px)}.hero-service:last-child{grid-column:5/7;padding-right:calc(var(--edge) + 24px)}}
 @media(min-width:1600px){.hero-services{--edge:9cqw}}
+/* Employee login: last item in the top menu, opens the BHB dashboard. */
+header.site-header nav a.staff-login{display:inline-flex;align-items:center;gap:7px;color:#b9b3a3}
+header.site-header nav a.staff-login svg{color:var(--gold)}
