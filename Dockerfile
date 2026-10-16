@@ -6,7 +6,7 @@ RUN npx --yes pnpm@10 install --frozen-lockfile
 COPY . .
 # The dashboard that receives enquiries and serves /admin. Override with --build-arg.
 ARG BHB_DASHBOARD_URL=https://bhb-dashboard-552796549284.us-east5.run.app
-ARG BHB_SITE_URL=https://www.bhbcentre.com
+ARG BHB_SITE_URL=https://bhb-website-552796549284.us-central1.run.app
 RUN BHB_DASHBOARD_URL=$BHB_DASHBOARD_URL BHB_SITE_URL=$BHB_SITE_URL npx --yes pnpm@10 run build
 
 FROM node:24-alpine
